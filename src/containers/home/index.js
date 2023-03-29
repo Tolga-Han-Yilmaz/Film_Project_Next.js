@@ -7,18 +7,18 @@ import FeaturedMovie from "@/components/featured-movie";
 import Categories from "@/components/categories";
 import MoviesSection from "@/components/movies-section";
 
-function HomeContainer({ selectedCategory }) {
+function HomeContainer({ selectedCategories }) {
   return (
     <div>
       <FeaturedMovie movie={Movies.results[0]} />
       <Categories categories={Genres.genres.slice(0, 5)} />
-      {selectedCategory.movies.length > 0 && (
+      {selectedCategories.movies.length > 0 && (
         <MoviesSection
           title={
-            Genres.genres.find((genre) => `${genre.id}` === selectedCategory.id)
+            Genres.genres.find((genre) => `${genre.id}` === selectedCategories.id)
               .name
           }
-          movies={selectedCategory.movies}
+          movies={selectedCategories.movies}
         />
       )}
       <MoviesSection

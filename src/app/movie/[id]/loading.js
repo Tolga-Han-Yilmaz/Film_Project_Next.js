@@ -10,4 +10,4 @@ function MovieLoading() {
   )
 }
 
-export default MovieLoading
+export default MovieLoading;
